@@ -2,7 +2,7 @@ name = "Stanford - Search"
 description = "Google Custom Search Module"
 package = "Stanford"
 core = 7.x
-version = 7.x-1.0
+version = 7.x-1.1
 
 scripts[] = js/google_cse.js
 stylesheets[all][] = css/google_cse.css

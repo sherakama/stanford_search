@@ -1,5 +1,12 @@
 <?php
+/**
+ * @file
+ */
 
+
+/**
+ * Add the search id to the Drupal.settings.stanford_search variable.
+ */
 function stanford_search_init() {
   $settings = array(
     'id' => variable_get('stanford_search_engine_id', ''),
@@ -7,15 +14,20 @@ function stanford_search_init() {
   drupal_add_js(array('stanford_search' => $settings), 'setting');
 }
 
+/**
+ * Implements hook_menu().
+ */
 function stanford_search_menu() {
   $items = array();
 
+  // Search page results.
   $items['search'] = array(
     'title'           => 'Search',
-	'page callback'   => 'stanford_search_search_page',
-	'access callback' => TRUE,
+    'page callback'   => 'stanford_search_search_page',
+    'access callback' => TRUE,
   );
 
+  // Search page configuration.
   $items['admin/config/search/stanford_search'] = array(
     'title' => 'Stanford Search',
     'type' => MENU_NORMAL_ITEM,
@@ -29,31 +41,43 @@ function stanford_search_menu() {
   return $items;
 }
 
+/**
+ * Search results menu path callback.
+ * @return array
+ *   Render array.
+ */
 function stanford_search_search_page() {
-  $output = '<gcse:search linktarget="_parent" queryparametername="q_as"></gcse:search>';
-  return $output;
+  $render = array();
+  $render['content']['#markup'] = '<gcse:search linktarget="_parent" queryparametername="as_q"></gcse:search>';
+
+  return $render;
 }
 
+/**
+ * Implements hook_block_info().
+ */
 function stanford_search_block_info() {
   $blocks['stanford_search_search'] = array(
     'info' => t('Search box'),
-	'status' => TRUE,
-	'region' => 'search_box',
-	'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-	'pages' => 'search',
+    'status' => TRUE,
+    'region' => 'search_box',
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => 'search',
   );
-
   return $blocks;
 }
 
+/**
+ * Implements hook_block_view().
+ */
 function stanford_search_block_view($delta = '') {
   switch ($delta) {
     case 'stanford_search_search':
       global $base_url;
-	  $block['content'] = array(
-	    '#markup' => '<gcse:searchbox-only linktarget="' . $base_url . '" queryparametername="q_as"></gcse:searchbox-only>',
+      $block['content'] = array(
+        '#markup' => '<gcse:searchbox-only linktarget="' . $base_url . '" queryparametername="as_q"></gcse:searchbox-only>',
       );
-	  break;
+      break;
   }
   return $block;
 }
