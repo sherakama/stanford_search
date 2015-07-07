@@ -1,0 +1,150 @@
+.gsc-control-searchbox-only {
+  max-width: 300px;
+}
+
+.gsc-control-searchbox-only tbody,
+.gsc-control-searchbox-only table,
+.gsc-control-searchbox-only tr,
+.gsc-control-searchbox-only th,
+.gsc-control-searchbox-only td {
+  border: 0;
+  border-top: 0;
+  border-color: transparent;
+}
+
+table.gsc-branding td,
+table.gsc-branding,
+table.gcsc-branding td,
+table.gcsc-branding {
+  display: none !important;
+}
+
+.gsc-clear-button {
+  display: none;
+}
+
+.gsc-control-searchbox-only .gsc-search-button {
+  position: relative;
+}
+
+.gsc-control-searchbox-only .gsc-search-button {
+  width: 1px;
+}
+
+.gsc-control-searchbox-only td input.gsc-search-button {
+  background: transparent url("https://openframework.stanford.edu/sites/all/themes/open_framework/images/searchbutton.png") 0 0;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  color: transparent;
+  border: none !important;
+  outline: none;
+  box-shadow: none;
+  position: absolute;
+  top: 6px;
+  left: -40px;
+  z-index: 10;
+}
+
+.gsc-control-searchbox-only .gsc-input {
+  text-align: right;
+}
+
+.gsc-control-searchbox-only .gsc-input input.gsc-input {
+  width: 175px;
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+}
+
+
+/* Google Custom Search Box on Search Results */
+
+.gsib_a {
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.gsc-search-box td,
+.gsc-search-box th {
+  border: none;
+}
+
+.gsc-control-cse td,
+.gsc-control-cse th {
+  border: none;
+  padding: 0;
+}
+
+td.gsib_a,
+.gsc-table-result,
+.gsc-thumbnail-inside,
+.gsc-url-top,
+.cse,
+.gsc-control-cse,
+.gsc-control-cse {
+  padding: 0;
+}
+
+.gsc-control-cse {
+  background-color: #FBFBF9;
+  border-color: #FBFBF9;
+  font-family: "Source Sans Pro", Arial, Helvetica,sans-serif;
+}
+
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+  font-size: 14px;
+}
+
+.gsst_a {
+  padding-top: 6px;
+}
+
+a.gsst_a {
+  border: none;
+}
+
+.gs-promotion {
+  padding: 0 0.5em;
+}
+
+input.gsc-input {
+  box-shadow: 0 0 1px 1px #DDD9CF;
+  border-radius: 6px;
+  color: #827252;
+  padding-left: 10px;
+  padding-right: 33px;
+  border: 3px solid #F2F1EB;
+  background: #FFF !important;
+  display: block;
+  vertical-align: middle;
+  height: 20px;
+  padding: 4px 6px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  margin-right: 20px;
+}
+
+td input.gsc-search-button {
+  border-color: #BBBBBB;
+  background-color: #8D181B;
+  box-shadow: 0 0 1px 1px #DDD9CF;
+  border-radius: 6px;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 3px 15px;
+}
+
+.gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+  background: transparent;
+  font-weight: bold;
+  text-shadow: none;
+  padding: 3px;
+  display: inline-block;
+  color: #8D181B;
+}
